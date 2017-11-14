@@ -5,21 +5,55 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
+	.container	
+		width: 	970px
+
+	.top-bar-in
+		display: block
+		height: auto
+		padding: 10px 0
+		&__left
+			text-align: right
+			margin-bottom: 10px
+		&__right
+			text-align: right
+
+	#logo
+		width: 200px
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
+	.container	
+		width: 	750px
+
+	.main-menu,
+	.rigth-links
+		display: none
+
+	.hamburger
+		display: block
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
+	.container	
+		width: 	auto
+
+	.top-bar-in
+		&__left
+			display: none
+
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
+	.top-bar-in__right 
+		#search
+			width: 80%
 
 
 /* Custom, iPhone Retina */

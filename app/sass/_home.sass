@@ -1,0 +1,223 @@
+@mixin background($imgpath,$position:top center,$repeat: no-repeat, $size: contain)
+	background:
+		image: url($imgpath)
+		position: $position
+		repeat: $repeat
+		size: $size
+
+// top-bar-in
+.top-bar-in
+	height: 50px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: space-between
+	&__left
+		margin: 0
+		padding: 0
+		li
+			display: inline-block
+			&:not(:last-child)
+				margin-right: 37px
+			a
+				font-size: 12px
+				font-weight: 600
+				text-transform: uppercase
+				&:hover
+					color: $accent-color
+	&__right
+		#search
+			width: 330px
+			display: inline-block
+			padding-right: 30px
+			position: relative
+			margin-right: 30px
+		input[name="search"]
+			width: 100%
+			border: none
+			border-bottom: 1px solid $light-gray
+		.button-search
+			width: 20px	
+			height: 20px
+			@include background('../img/home/search-ico.png')
+			position: absolute
+			top: 50%
+			margin-top: -10px	
+			right: 0
+			cursor: pointer
+		.my-account
+			display: inline-block
+			vertical-align: middle
+			width: 20px	
+			height: 20px
+			@include background('../img/home/user.png')
+
+
+// main-bar
+.main-bar
+	background-color: $main-bg
+	padding: 10px 0
+	&-in
+		display: flex
+		height: 70px
+		align-items: center
+		justify-content: space-between
+
+#logo
+	width: 270px
+
+.sf-menu
+	float: none
+	margin-bottom: 0
+
+
+/* sfmenu*/
+.sf-menu li,
+.sf-menu ul li,
+.sf-menu ul ul li,
+.sf-menu li:hover, 
+.sf-menu li.sfHover
+	background-color: transparent
+
+.sf-menu
+	margin-bottom: 0
+	ul
+		background-color: #fff	
+		font-weight: 600	
+		top: 10	0%	
+		display: none
+		box-shadow: 4px 14px 39px rgba(0,0,0,.12)
+		img
+		  margin-right: 10px  
+		  display: inline-block  
+		  vertical-align: sub
+	li
+		a
+			font-size: 14px	
+			font-weight: 500	
+			text-transform: uppercase	
+			font-family: 'Raleway', sans-serif	
+			color: #000
+			padding: 17px 20px
+			border: none
+			font-weight: 700
+			&:hover
+				color: #88d7ff
+		ul
+			.sf-with-ul
+				position: relative
+				&::after 
+					content: ""    
+					opacity: 0  
+					width: 0    
+					height: 0    
+					border-style: solid    
+					border-width: 10px 0 10px 10px    
+					border-color: transparent transparent transparent #fff
+					position: absolute    
+					top: 50%    
+					right: -10px
+					margin-top: -10px
+					transition: all 0.1s ease 
+	> li 
+		> a
+			&.sf-with-ul
+				&::after
+					content: ""    
+					position: absolute
+					width: 0
+					height: 0
+					bottom: 0	
+					opacity: 0
+					right: 50%
+					margin-right: -10px
+					border-style: solid
+					border-width: 0 10px 10px 10px
+					border-color: transparent transparent #fff transparent
+					transition: all 0.1s ease
+	ul 
+		ul 
+			left: 107%
+
+.sf-menu > li > .sf-with-ul:focus::after,
+.sf-menu > li:hover > .sf-with-ul::after, 
+.sf-menu > li.sfHover > .sf-with-ul::after
+	opacity: 1
+
+.sf-menu ul li > .sf-with-ul:focus::after, 
+.sf-menu ul li:hover > .sf-with-ul::after, 
+.sf-menu ul .sfHover > .sf-with-ul::after
+	opacity: 1
+
+.sf-menu ul li:not(:last-child) 
+	border-bottom: 1px solid #dfdfe0
+
+.menu-ico
+	background: url('../img/home/menu-ico/ico-sprite.png') no-repeat
+	overflow: hidden
+	text-indent: -9999px
+	text-align: left
+	display: inline-block
+	vertical-align: middle
+	margin-right: 10px
+	&.windows
+		background-position: -0px -40px
+		width: 20px
+		height: 19px
+	&.windows10
+		background-position: -0px -59px
+		width: 20px
+		height: 20px
+	&.windows7
+		background-position: -0px -79px
+		width: 20px
+		height: 18px
+	&.windows8
+		background-position: -0px -97px
+		width: 19px
+		height: 20px
+	&.windows-vista
+		background-position: -0px -20px
+		width: 20px
+		height: 20px
+	&.windows-xp
+		background-position: -0px -79px
+		width: 20px
+		height: 18px
+	&.windows-server
+		background-position: -0px -117px
+		width: 19px
+		height: 19px
+	&.office
+		background-position: -0px -136px	
+		width: 16px 
+		height: 20px
+	&.skype
+		background-position: -0px -0px
+		width: 20px
+		height: 20px
+
+.rigth-links
+	> div
+		display: inline-block
+#cart
+	margin-right: 30px
+
+.hamburger
+	display: none
+	outline: none
+	line-height: 1
+
+
+// home-banner
+.home-banner
+	height: 400px
+	&__left
+		width: 40%	
+		float: left
+	&__right
+		width: 60%	
+		float: right
