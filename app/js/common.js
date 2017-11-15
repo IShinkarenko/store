@@ -1,6 +1,6 @@
 $(function() {
 
- 'use strict';
+	'use strict';
 
 	$('ul.sf-menu').superfish({
 		delay: 200, 
@@ -10,17 +10,34 @@ $(function() {
 		}
 	});
 
-	var $hamburger = $(".hamburger");
-  $hamburger.on("click", function() {
-    $hamburger.toggleClass("is-active");
-  });
+	var $hamburger = $(".hamburger"),
+	mainMenu = $(".main-menu");
+	$hamburger.on("click", function() {
+		$hamburger.toggleClass("is-active");
+	});
 
-  $('.home-banner__carousel').owlCarousel({
-  	items: 1,
-    loop: true,
-    dots: true,
-	})
+
+	$('.home-banner__carousel').owlCarousel({
+		items: 1,
+		loop: true,
+		dots: true,
+		autoWidth: true,
+		margin: 10
+	});
+
+	$('.products-carousel').owlCarousel({
+		items: 4,
+		loop: true,
+		dots: false,
+		nav: true,
+		margin: 25,
+		navText: ["<img src='../img/home/chevron-left.png'>", "<img src='../img/home/chevron-right.png'>"]
+	});
+
+
+	$( window ).resize(function() {
+		
+	});
 
 
 });
-	
