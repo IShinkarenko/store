@@ -249,6 +249,8 @@
 .main-content
 	background-color: $main-bg
 	padding: 50px 0
+	section
+		margin-bottom: 100px
 .box-product
 	display: flex
 	> div
@@ -279,6 +281,8 @@
 			height: 100%
 			width: 100%
 			padding: 5px 25px
+			&:hover
+				color: $default-color
 		&--title
 			margin-top: 30px
 		h2
@@ -308,16 +312,18 @@
 			justify-content: space-between
 
 // products-carousel
-.products
-	margin-top: 90px
 	
 .products-carousel
+	.owl-stage-outer
+		padding: 20px 0
 	&__item
 		width: 100%
 		background-color: #fff
 		padding: 20px
 		overflow: hidden
 		text-align: center
+		&:hover
+			box-shadow: 0px 2px 30px 2px rgba(0,0,0, 0.15)
 		figure
 			margin: 0	auto 25px
 		figcaption
@@ -328,8 +334,10 @@
 			font-size: 18px
 			font-weight: 500
 			line-height: 1.4
-			margin-bottom: 30px
-			height: 55px
+			margin-bottom: 20px
+			min-height: 45px
+		p
+			margin: 0 0 20px 0
 		.price
 			font-weight: 300
 			font-size: 18px
@@ -356,6 +364,8 @@
 			span
 				font-weight: 500
 				font-size: 24px
+		.descr
+			font-size: 14px
 		img
 			display: block
 			margin: 0 auto 30px
@@ -374,6 +384,138 @@
 			&:first-child
 				margin-right: 25px
 
+// benefits
+.benefits
+	&-list
+		display: flex
+		&__item
+			text-align: center
+			font-size: 14px
+			img
+				margin-bottom: 20px	
+		figcaption
+			font-weight: 700
+			text-transform: uppercase
 
 
-	
+// about-shop
+.about
+	display: flex
+	&-content
+		&:nth-child(2)
+			margin-left: 40px
+
+
+// testimonials
+.testimonials
+	&-list
+		margin-top: 50px
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		&__item
+			flex: 0 0 275px
+			background-color: #fff
+			text-align: center
+			padding: 13px
+		&--img
+			width: 75px
+			height: 75px
+			background-color: #00aaff
+			border-radius: 50%
+			margin: -50px auto 0
+			span
+				line-height: 75px
+				text-transform: uppercase
+				font-size: 30px
+				color: #fff
+		&--date
+			display: flex
+			justify-content: space-between
+			margin-top: 27px
+	&-name
+		text-transform: uppercase
+		font-weight: 700
+		margin-bottom: 0
+	&-email
+		color: $gray-medium
+		font-size: 12px
+		margin: 0
+
+//payments
+.payments
+	margin: 50px	0
+	&-list
+		display: flex
+		justify-content: center
+		&__item
+			width: 100px
+			text-align: center
+			&:not(:last-child)
+				margin-right: 80px
+		&--img
+			width: 40px
+			height: 40px
+			margin: 0 auto 10px
+			background-image: url(../img/home/payment.jpg)
+			background-repeat: no-repeat
+		&--title
+			color: $gray-bold
+
+
+.yandex
+	background-position: 0 0
+.ccard
+	background-position: -40px 0
+.webmoney
+	background-position: -80px 0
+.mobile
+	background-position: -120px 0
+.terminal
+	background-position: -160px 0
+
+
+// footer
+footer
+	padding: 50px
+	border-top: 1px solid $light-gray
+	.column-group
+		display: flex
+		justify-content: space-between
+	.column-wrap
+		&:first-child
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			p
+				margin: 0
+		&:last-child
+			flex: 1
+			margin-left: 100px
+	ul
+		margin: 0
+		padding: 0
+	li
+		list-style-type: none
+		line-height: 1
+		&:not(:last-child)
+			margin-bottom: 17px
+	a
+		font-size: 12px
+		font-weight: 700
+		text-transform: uppercase
+	h3
+		margin: 0 0 18px
+		font-size: 12px
+		font-weight: 700
+		text-transform: uppercase
+		line-height: 1
+		color: $gray
+
+.contacts-info
+	a
+		font-weight: 400
+
+.footer-in
+	display: flex
+	justify-content: space-between

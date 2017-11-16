@@ -21,8 +21,7 @@ $(function() {
 		items: 1,
 		loop: true,
 		dots: true,
-		autoWidth: true,
-		margin: 10
+		autoWidth: false,
 	});
 
 	$('.products-carousel').owlCarousel({

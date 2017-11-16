@@ -1,6 +1,30 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1400px)
+	/**/
+	.container-wrap
+		width: 1230px
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1360px)
+	/**/
+	.container-wrap
+		width: auto
+
+	.box-product
+		display: block
+		> div:not(:last-child)
+			margin-right: 0
+		&--group 
+			.box-product__item
+				flex: 1 0 352px
+				&:nth-child(odd) 
+					margin-right: 25px
+
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
@@ -30,7 +54,7 @@
 @media only screen and (max-width : 992px)
 	/**/
 	.container	
-		width: 	750px
+		width: 	auto
 
 	.main-menu,
 	.rigth-links
@@ -54,13 +78,20 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
-	.container	
-		width: 	auto
-
 	.top-bar-in
 		&__left
 			display: none
+	
+	.box-product--group
+		display: block
+		p
+			width: auto
+		.box-product__item:nth-child(odd)
+			margin-right: 0
 
+	.box-product__item--text
+		display: flex
+		justify-content: space-between
 
 
 /* Extra Small Devices, Phones */

@@ -49,7 +49,7 @@ html, body
 	height: 100%
 
 body
-	font-size: 16px
+	font-size: 14px
 	min-width: 320px
 	position: relative
 	font-family: $default-font
@@ -70,7 +70,7 @@ a
 	transition: all 0.2s ease
 	&:hover,
 	&:focus
-		color: inherit
+		color: $accent-color
 
 .container	
 	width: 	1180px
@@ -84,6 +84,7 @@ img
 .section-title
 	font-weight: 700
 	font-size: 24px
+	text-transform: uppercase
 
 .btn
 	width: 212px
@@ -92,6 +93,8 @@ img
 	display: block
 	text-align: center
 	transition: all 0.3s ease
+	font-size: 14px
+	text-transform: uppercase
 	&-buy
 		background-color: $default-color
 		color: #fff
@@ -107,3 +110,22 @@ img
 .owl-carousel .owl-item img
 	width: auto
 
+figure
+	img
+		margin: 0 auto
+		width: auto
+		display: block
+
+.container-wrap
+	max-width: 1400px
+	width: 1400px
+	margin: 0 auto
+
+.aligncenter
+	text-align: center
+
+.alignleft
+	text-align: left
+
+.alignright
+	text-align: right
