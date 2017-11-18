@@ -50,6 +50,23 @@
 			height: 350px
 
 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+	.home-banner
+		margin-bottom: 10px
+		min-height: 300px
+		&__left
+			display: none
+		&__right
+			width: 100%
+			float: none
+		.owl-item 
+			img
+				height: auto
+				width: 100%
+			width: 100%
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
@@ -63,16 +80,12 @@
 	.hamburger
 		display: block
 
-	// .home-banner
-	// 	img
-	// 		height: auto
-	// 		width: 100%
-	// 	&__left
-	// 		display: none
-	// 	&__right
-	// 		width: 100%
-	// 		float: none
-
+	#my-menu
+		display: none !important
+	
+	#mobile-menu
+		a
+			text-transform: uppercase
 
 
 /* Small Devices, Tablets */
@@ -127,6 +140,14 @@
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
 	/**/
+	#mm-my-menu
+		display: none !important
+	.toggle-mnu
+		display: none
+	.toggle-mnu, #mobile-menu, html.mm-blocking #mm-blocker
+		display: none
+	html.mm-opening .mm-slideout
+		transform: translate(0px, 0px)
 
 
 /* Large Devices, Wide Screens */
