@@ -5,9 +5,14 @@
 		repeat: $repeat
 		size: $size
 
+/* home page
+   ================================ */
 // top-bar-in
+.top-bar
+	background-color: #272930
+
 .top-bar-in
-	height: 50px
+	height: 60px
 	display: -webkit-flex
 	display: -moz-flex
 	display: -ms-flex
@@ -25,7 +30,8 @@
 			a
 				font-size: 12px
 				font-weight: 600
-				text-transform: uppercase
+				color: #fff
+				font-weight: 300
 				&:hover
 					color: $accent-color
 	&__right
@@ -39,6 +45,7 @@
 			width: 100%
 			border: none
 			border-bottom: 1px solid $light-gray
+			background-color: transparent
 		.button-search
 			width: 20px	
 			height: 20px
@@ -58,7 +65,7 @@
 
 // main-bar
 .main-bar
-	background-color: $main-bg
+	background-color: #fff
 	padding: 10px 0
 	&-in
 		display: flex
@@ -68,6 +75,9 @@
 
 #logo
 	width: 270px
+
+.hamburger-link
+	display: none
 
 .sf-menu
 	float: none
@@ -87,9 +97,10 @@
 	ul
 		background-color: #fff	
 		font-weight: 600	
-		top: 10	0%	
+		top: 100%	
 		display: none
 		box-shadow: 4px 14px 39px rgba(0,0,0,.12)
+		min-width: 14em
 		img
 		  margin-right: 10px  
 		  display: inline-block  
@@ -103,7 +114,6 @@
 			color: #000
 			padding: 17px 20px
 			border: none
-			font-weight: 700
 			&:hover
 				color: #88d7ff
 		ul
@@ -214,18 +224,24 @@
 
 // home-banner
 .home-banner
-	// margin-top: 10px
 	overflow: hidden
-	// max-width: 2000px
-	margin: 10px auto 0
-	img
-		height: auto
+	margin: 0px auto 
+	&__item
+		position: relative
+		.banner-btn
+			.btn-buy
+				background-color: #000
+				color: #fff
+			.btn-more
+				color: #000
+		img
 		width: 100%
 		height: 420px
 	&__left
 		width: 578px
 		float: left
 		padding-right: 10px
+		position: relative
 	&__right
 		width: calc(100% - 578px)
 		float: right
@@ -246,12 +262,30 @@
 			&.active
 				background-color: #000
 
+.banner-btn
+	position: absolute
+	bottom: 20px
+	left: 10%
+	.btn-buy
+		background-color: #fff
+		color: #000
+		&:hover
+			background-color: $accent-color
+			color: #fff
+	.btn-more
+		color: #fff
+		&:hover
+			color: $accent-color
+
 // box-product
 .main-content
 	background-color: $main-bg
-	padding: 50px 0
+	padding: 90px 0 20px
+	.testimonials
+		margin-bottom: 20px
 	section
-		margin-bottom: 100px
+		margin-bottom: 70px
+		
 .box-product
 	display: flex
 	> div
@@ -287,11 +321,10 @@
 		&--title
 			margin-top: 30px
 		h2
-			font-weight: 300
-			font-size: 36px
+			font-weight: 500
+			font-size: 30px
 			margin-top: 0
 			transition: color 0.4s ease
-
 		p
 			font-size: 14px
 	&--group
@@ -304,15 +337,21 @@
 		p
 			display: inline-block
 			width: 65%
+			color: $paragraf-color
 	.first-box
 		flex: 0 0 370px
 		p
-			font-size: 18px
+			font-size: 16px
+			color: $paragraf-color
+			&:not(:last-child)
+				margin-bottom: 40px
 		.box-product__item--title
 			display: flex
 			justify-content: space-between
 
 // products-carousel	
+.img-holder
+	height: 180px
 .products-carousel
 	.owl-stage-outer
 		padding: 20px 0
@@ -322,8 +361,12 @@
 		padding: 20px
 		overflow: hidden
 		text-align: center
+		box-shadow: 0px 2px 30px 2px rgba(0,0,0, 0)
+		transition: all 0.5s ease
 		&:hover
 			box-shadow: 0px 2px 30px 2px rgba(0,0,0, 0.15)
+			h4
+				color: $accent-color
 		figure
 			margin: 0	auto 25px
 		figcaption
@@ -335,32 +378,16 @@
 			font-weight: 500
 			line-height: 1.4
 			margin-bottom: 20px
-			min-height: 45px
+			min-height: 75px
+			transition: color 0.5s ease
 		p
 			margin: 0 0 20px 0
+			color: $paragraf-color
 		.price
-			font-weight: 300
+			font-weight: 200
 			font-size: 18px
 			position: relative
 			display: inline-block
-			&::after
-				content: ""
-				position: absolute
-				top: 50%
-				margin-top: 1px
-				width: 100%
-				height: 1px
-				right: 110%
-				background-color: $light-gray
-			&::before
-				content: ""
-				position: absolute
-				top: 50%
-				margin-top: 1px
-				width: 100%
-				height: 1px
-				left: 110%
-				background-color: $light-gray
 			span
 				font-weight: 500
 				font-size: 24px
@@ -368,7 +395,7 @@
 			font-size: 14px
 		img
 			display: block
-			margin: 0 auto 30px
+			// margin: 0 auto 30px
 	.owl-stage
 		display: flex;
 		flex-wrap: wrap
@@ -388,9 +415,12 @@
 .benefits
 	&-list
 		display: flex
+		flex-wrap: wrap
+		margin-top: 60px
 		&__item
 			text-align: center
 			font-size: 14px
+			flex: 1 0 200px
 			img
 				margin-bottom: 20px	
 		figcaption
@@ -400,17 +430,28 @@
 
 // about-shop
 .about
-	display: flex
-	&-content
-		&:nth-child(2)
-			margin-left: 40px
+	p
+		color: $paragraf-color
+		&:not(:last-child)
+			margin-bottom: 30px
 
 
 // testimonials
+.more-testimonials
+	position: absolute
+	right: 0
+	top: 0
+	font-weight: 700
+	.fa
+		margin-right: 5px
+		color: #a9a9a9
+
 .testimonials
+	position: relative
 	&-list
-		margin-top: 50px
+		margin-top: 80px
 		display: flex
+		flex-wrap: wrap
 		justify-content: space-between
 		align-items: flex-start
 		&__item
@@ -418,6 +459,11 @@
 			background-color: #fff
 			text-align: center
 			padding: 13px
+			margin-bottom: 50px
+			box-shadow: 0px 2px 30px 2px rgba(0,0,0, 0)
+			transition: all 0.5s ease
+			&:hover
+				box-shadow: 0px 2px 30px 2px rgba(0,0,0, 0.15)
 		&--img
 			width: 75px
 			height: 75px
@@ -444,15 +490,14 @@
 
 //payments
 .payments
-	margin: 50px	0
 	&-list
 		display: flex
+		flex-wrap: wrap
 		justify-content: center
 		&__item
 			width: 100px
 			text-align: center
-			&:not(:last-child)
-				margin-right: 80px
+			margin: 0 30px 
 		&--img
 			width: 40px
 			height: 40px
@@ -477,10 +522,14 @@
 
 // footer
 footer
-	padding: 50px
-	border-top: 1px solid $light-gray
+	background-color: $default-color
+	.fa-stack
+		margin-right: 8px
+	.fa-circle
+		color: #bebec0
 	.column-group
 		display: flex
+		flex-wrap: wrap
 		justify-content: space-between
 	.column-wrap
 		&:first-child
@@ -489,6 +538,7 @@ footer
 			justify-content: space-between
 			p
 				margin: 0
+				color: #fff
 		&:last-child
 			flex: 1
 			margin-left: 100px
@@ -498,19 +548,27 @@ footer
 	li
 		list-style-type: none
 		line-height: 1
+		color: #fff
 		&:not(:last-child)
 			margin-bottom: 17px
+		&:hover
+			a
+				color: $accent-color
 	a
 		font-size: 12px
-		font-weight: 700
+		font-weight: 400
 		text-transform: uppercase
-	h3
+		color: #fff
+
+	h4
 		margin: 0 0 18px
 		font-size: 12px
 		font-weight: 700
 		text-transform: uppercase
 		line-height: 1
 		color: $gray
+	.fa-inverse
+		color: #272930
 
 .contacts-info
 	a
@@ -519,3 +577,14 @@ footer
 .footer-in
 	display: flex
 	justify-content: space-between
+	padding: 60px 0
+
+
+.footer-top
+		align-items: center
+		border-bottom: 1px solid $border-color
+
+		h3
+			margin: 0
+			font-size: 36px
+			color: #fff

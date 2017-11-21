@@ -16,8 +16,10 @@
 	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-	<!-- Google Font | Roboto -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Google Font | Raleway -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
 	<!-- Css -->
 	<link rel="stylesheet" href="css/main.min.css">
 
@@ -66,7 +68,7 @@
 				<!-- /top-bar -->
 
 				<!-- main-bar -->
-				<div class="main-bar container-wrap">
+				<div class="main-bar">
 					<div class="container">
 						<div class="main-bar-in">
 
@@ -89,7 +91,7 @@
 												</li>
 												<li><a href="#"><div class="menu-ico  windows7"></div> Windows 7</a>
 												</li>
-												<li><a href="#"><div class="menu-ico windows-vista"></div> Windows Vista</a>
+												<li><a href="#"><div class="menu-ico windows-vista"></div> Windows Vista VistaVista</a>
 												</li>
 												<li><a href="#"><div class="menu-ico windows-xp"></div> Windows xp</a>
 												</li>
@@ -124,13 +126,13 @@
 							<!-- /rigth-links -->
 
 							<!-- mobile hamburger -->
-							<a href="#mobile-menu">
-							<button class="hamburger hamburger--3dx " type="button">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
-							</button>
-						</a>
+							<a href="#mobile-menu" class="hamburger-link">
+								<button class="hamburger hamburger--arrow " type="button">
+									<span class="hamburger-box">
+										<span class="hamburger-inner"></span>
+									</span>
+								</button>
+							</a>
 							<!-- /mobile hamburger -->
 						</div>
 					</div>
@@ -142,20 +144,20 @@
 
 		<section class="home-banner container-wrap">
 			<div class="home-banner__left">
-				<img src="img/home/top-left.jpg" alt="banner text">
-<!-- 				<div class="btn-group">
+				<img src="img/home/top-left.jpg" alt="banner text" height="420px">
+				<div class="btn-group banner-btn">
 					<a class="btn btn-buy" href="#">Купить</a>
 					<a class="btn btn-more" href="#">Подробнее</a>
-				</div> -->
+				</div>
 			</div>
 			<div class="home-banner__right">
 				<div class="home-banner__carousel owl-carousel">
 					<div class="home-banner__item">
-						<img src="img/home/top-right.jpg" alt="banner text">
-<!-- 						<div class="btn-group">
+						<img src="img/home/top-right.jpg" alt="banner text" height="420px">
+						<div class="btn-group banner-btn">
 							<a class="btn btn-buy" href="#">Купить</a>
 							<a class="btn btn-more" href="#">Подробнее</a>
-						</div> -->
+						</div>
 					</div>
 					<div class="home-banner__item">
 						<img src="img/home/top-right.jpg" alt="banner text">
@@ -175,7 +177,7 @@
 			</div>
 		</section>
 
-		<div class="main-content container-wrap">
+		<div class="main-content">
 			<div class="container">
 				<section class="box-product">
 					<!-- first-box -->
@@ -187,7 +189,10 @@
 								<img class="hover-img" src="img/ico/MS-2.png" alt="Microsoft">
 							</div>
 							<div class="box-product__item--text">
-								<p>Продукция Microsoft - самая популярная в мировом масштабе. Это и самая распространенная оперционная система Windows, и непревзойденный пакет офисных программ Office, и лучшее приложение для звонков по интернету Skype, и многое, многое другое!</p>
+								<p>Продукция Microsoft - самая популярная в мировом масштабе. </p>
+								<p>Это и самая распространенная оперционная система Windows, и непревзойденный пакет офисных рограмм Office. Лучшее приложение для звонков по интернету Skype, и многое, многое другое!</p>
+								<p>Продукция Microsoft - самая популярная в мировом масштабе. </p>
+
 							</div>
 						</a>
 					</div>
@@ -248,13 +253,15 @@
 				</section>
 
 				<section class="products">
-					<h3 class="section-title">Новинки</h3>
+					<h3 class="section-title">Новые поступления</h3>
 
 					<!-- products-carousel -->
 					<div class="products-carousel owl-carousel">
 						<div class="products-carousel__item">
 							<figure class="products-carousel--img">
-								<img src="img/home/prod-1.jpg" alt="prod-1">
+								<div class="img-holder">
+									<img src="img/home/prod-1.jpg" alt="prod-1">
+								</div>
 								<figcaption>Антивирусы</figcaption>
 							</figure>
 							<div class="products-carousel--title">
@@ -270,7 +277,9 @@
 
 						<div class="products-carousel__item">
 							<figure class="products-carousel--img">
-								<img src="img/home/prod-2.jpg" alt="prod-1">
+								<div class="img-holder">
+									<img src="img/home/prod-2.jpg" alt="prod-1">
+								</div>
 								<figcaption>Антивирусы</figcaption>
 							</figure>
 							<div class="products-carousel--title">
@@ -286,7 +295,9 @@
 
 						<div class="products-carousel__item">
 							<figure class="products-carousel--img">
-								<img src="img/home/prod-3.jpg" alt="prod-1">
+								<div class="img-holder">
+									<img src="img/home/prod-3.jpg" alt="prod-1">
+								</div>
 								<figcaption>Антивирусы</figcaption>
 							</figure>
 							<div class="products-carousel--title">
@@ -302,7 +313,9 @@
 
 						<div class="products-carousel__item">
 							<figure class="products-carousel--img">
-								<img src="img/home/prod-4.jpg" alt="prod-1">
+								<div class="img-holder">
+									<img src="img/home/prod-4.jpg" alt="prod-1">
+								</div>
 								<figcaption>Антивирусы</figcaption>
 							</figure>
 							<div class="products-carousel--title">
@@ -318,7 +331,9 @@
 
 						<div class="products-carousel__item">
 							<figure class="products-carousel--img">
-								<img src="img/home/prod-1.jpg" alt="prod-1">
+								<div class="img-holder">
+									<img src="img/home/prod-4.jpg" alt="prod-1">
+								</div>
 								<figcaption>Антивирусы</figcaption>
 							</figure>
 							<div class="products-carousel--title">
@@ -334,7 +349,9 @@
 
 						<div class="products-carousel__item">
 							<figure class="products-carousel--img">
-								<img src="img/home/prod-2.jpg" alt="prod-1">
+								<div class="img-holder">
+									<img src="img/home/prod-2.jpg" alt="prod-1">
+								</div>
 								<figcaption>Антивирусы</figcaption>
 							</figure>
 							<div class="products-carousel--title">
@@ -396,7 +413,7 @@
 				</section>
 
 				<section class="products">
-					<h3 class="section-title">Последние продажи</h3>
+					<h3 class="section-title">Недавно купили</h3>
 
 					<!-- products-carousel -->
 					<div class="products-carousel owl-carousel">
@@ -493,26 +510,10 @@
 					<!-- products-carousel -->
 				</section>
 
-				<section class="products">
-					<h3 class="section-title">О магазине</h3>
-
-					<!-- about -->
-					<div class="about">
-						<div class="about-content">
-							<p>Наш магазин осуществляет продажу уникальных премиум кодов и ключей активации - для файлообменников, операционных систем, офисных продуктов и антивирусных программ. Эти коды нужны для того, чтобы Вы могли пользоваться всеми преимуществами и возможностями подлинной копии продукта и не бояться за кражу личных данных или нестабильную работу, а также качать необходимые вам файлы на максимальной скорости, в несколько потоков и без ожидания.</p>
-							<p>Наши коды работают не хуже коробочных версий, а цены Вас приятно удивят. Доставка товара происходит автоматически и моментально после оплаты благодаря сервису автоматизированного приема платежей Digiseller.</p>
-						</div>
-						<div class="about-content">
-							<p>Магазин славится своими низкими ценами и всевозможными скидками на товары, которые непременно Вас обрадуют и сохранят часть Вашего бюджета.</p>
-							<p>Магазин открыт в июне 2010 года. За это время мы завоевали сотни постоянных покупателей и тысячи положительных отзывов как на страницах своего магазина, так и на других ресурсах. По состоянию на начало 2016 года нами уже продано более 40000 различных ключей и кодов активации. Ежедневно на продажу выставлено не менее 80 товаров по привлекательным ценам. Услугами магазина воспользовалось более 27000 человек. Попробуйте и Вы!</p>
-						</div>
-					</div>
-					<!-- /about -->
-				</section>
 
 				<section class="testimonials">
-					<h3 class="section-title">О магазине</h3>
-
+					<h3 class="section-title">Отзывы</h3>
+					<div class="more-testimonials"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Все отзывы</a></div>
 					<!-- testimonials-list -->
 					<div class="testimonials-list">
 						<div class="testimonials-list__item">
@@ -577,40 +578,52 @@
 					</div>
 					<!-- /testimonials-list -->
 				</section>
+				<section class="products">
+					<h3 class="section-title">О магазине</h3>
+					<!-- about -->
+					<div class="about">
+						<p>Наш магазин осуществляет продажу уникальных премиум кодов и ключей активации - для файлообменников, операционных систем, офисных продуктов и антивирусных программ. Эти коды нужны для того, чтобы Вы могли пользоваться всеми преимуществами и возможностями подлинной копии продукта и не бояться за кражу личных данных или нестабильную работу, а также качать необходимые вам файлы на максимальной скорости, в несколько потоков и без ожидания. Наши коды работают не хуже коробочных версий, а цены Вас приятно удивят. Доставка товара происходит автоматически и моментально после оплаты благодаря сервису автоматизированного приема платежей Digiseller.</p>
+						<p>Наш магазин осуществляет продажу уникальных премиум кодов и ключей активации - для файлообменников, операционных систем, офисных продуктов и антивирусных программ. Эти коды нужны для того, чтобы Вы могли пользоваться всеми преимуществами и возможностями подлинной копии продукта и не бояться за кражу личных данных или нестабильную работу, а также качать необходимые вам файлы на максимальной скорости, в несколько потоков и без ожидания. Наши коды работают не хуже коробочных версий, а цены Вас приятно удивят. Доставка товара происходит автоматически и моментально после оплаты благодаря сервису автоматизированного приема платежей Digiseller.</p>
+					</div>
+					<!-- /about -->
+				</section>
 			</div>
 		</div>
 
 		<!-- payments -->
-		<section class="payments">
-			<h3 class="section-title aligncenter">Способы оплаты</h3>
-			<div class="payments-list">
-				<div class="payments-list__item">
-					<div class="payments-list--img yandex"></div>
-					<div class="payments-list--title">Яндекс Деньги</div>
-				</div>
-				<div class="payments-list__item">
-					<div class="payments-list--img ccard"></div>
-					<div class="payments-list--title">Яндекс Деньги</div>
-				</div>
-				<div class="payments-list__item">
-					<div class="payments-list--img webmoney"></div>
-					<div class="payments-list--title">Яндекс Деньги</div>
-				</div>
-				<div class="payments-list__item">
-					<div class="payments-list--img mobile"></div>
-					<div class="payments-list--title">Яндекс Деньги</div>
-				</div>
-				<div class="payments-list__item">
-					<div class="payments-list--img terminal"></div>
-					<div class="payments-list--title">Яндекс Деньги</div>
-				</div>
-			</div>
-		</section>
+
 		<!-- /payments -->
 
 		<footer class="container-wrap">
 			<div class="container">
-				<div class="footer-in">
+				<div class="footer-in footer-top">
+
+					<h3 class="section-title aligncenter">Способы оплаты:</h3>
+					<div class="payments-list">
+						<div class="payments-list__item">
+							<div class="payments-list--img yandex"></div>
+							<div class="payments-list--title">Яндекс Деньги</div>
+						</div>
+						<div class="payments-list__item">
+							<div class="payments-list--img ccard"></div>
+							<div class="payments-list--title">Яндекс Деньги</div>
+						</div>
+						<div class="payments-list__item">
+							<div class="payments-list--img webmoney"></div>
+							<div class="payments-list--title">Яндекс Деньги</div>
+						</div>
+						<div class="payments-list__item">
+							<div class="payments-list--img mobile"></div>
+							<div class="payments-list--title">Яндекс Деньги</div>
+						</div>
+						<div class="payments-list__item">
+							<div class="payments-list--img terminal"></div>
+							<div class="payments-list--title">Яндекс Деньги</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="footer-in footer-bottom">
 					<div class="column-wrap">
 						<div class="column-group">
 							<ul class="column">
@@ -625,13 +638,13 @@
 								<li><a href="#">Контакты</a></li>
 							</ul>
 						</div>
-						<p>© 2017, e-license.store. Все права защищены.</p>
+						<p class="all-rights">© 2017, e-license.store. Все права защищены.</p>
 					</div>
 					<div class="column-wrap">
 
 						<div class="column-group">
 							<div>
-								<h3>Купить:</h3>
+								<h4>Купить:</h4>
 								<ul class="column">
 									<li><a href="#">Microsoft</a></li>
 									<li><a href="#">Антивирусы</a></li>
@@ -641,31 +654,47 @@
 								</ul>
 							</div>
 							<div>
-								<h3>Мы в соц-сетях:</h3>
+								<h4>Мы в соц-сетях:</h4>
 								<ul class="column social-network">
-									<li><a href="#">ВКонтакте</a></li>
-									<li><a href="#">Instagram</a></li>
-									<li><a href="#">Facebook</a></li>
-									<li><a href="#">Twitter</a></li>
-								</ul>
+									<li><a href="#">
+										<span class="fa-stack ">
+											<i class="fa fa-circle fa-stack-2x"></i>
+											<i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+										</span>ВКонтакте</a></li>
+										<li><a href="#">
+											<span class="fa-stack ">
+												<i class="fa fa-circle fa-stack-2x"></i>
+												<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+											</span>Instagram</a></li>
+											<li><a href="#">
+												<span class="fa-stack ">
+													<i class="fa fa-circle fa-stack-2x"></i>
+													<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+												</span>Facebook</a></li>
+												<li><a href="#">
+													<span class="fa-stack ">
+														<i class="fa fa-circle fa-stack-2x"></i>
+														<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+													</span>Twitter</a></li>
+												</ul>
+											</div>
+											<div>
+												<h4>Контакты:</h4>
+												<ul class="column contacts-info">
+													<li>E-mail: <a href="mailto:mail@e-license.store">mail@e-license.store</a></li>
+													<li>Skype: <a href="skype:[e-license.store]?add">e-license.store</a></li>
+													<li>ICQ: <a href="#">2300567</a></li>
+													<li>Telegram: <a href="tg://resolve?domain=<@e-license.store>">@e-license.store</a></li>
+													<li>М-агент: <a href="#">e-license.store</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div>
-								<h3>Контакты:</h3>
-								<ul class="column contacts-info">
-									<li>E-mail: <a href="mailto:mail@e-license.store">mail@e-license.store</a></li>
-									<li>Skype: <a href="skype:[e-license.store]?add">e-license.store</a></li>
-									<li>ICQ: <a href="#">2300567</a></li>
-									<li>Telegram: <a href="tg://resolve?domain=<@e-license.store>">@e-license.store</a></li>
-									<li>М-агент: <a href="#">e-license.store</a></li>
-								</ul>
-							</div>
-						</div>
+						</footer>
+
 					</div>
-				</div>
-			</div>
-		</footer>
-
-	</div>
 
 
 
@@ -690,6 +719,7 @@
 
 
 
-	<script src="js/scripts.min.js"></script>
-</body>
-</html>
+
+					<script src="js/scripts.min.js"></script>
+				</body>
+				</html>

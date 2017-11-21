@@ -1,7 +1,11 @@
-$(function() {
+$(document).ready(function() {
 
 	'use strict';
 
+	// equal height product desc in product carousel
+	$('.products-carousel__item .descr').matchHeight();
+
+	// desktop menu
 	$('ul.sf-menu').superfish({
 		delay: 200, 
 		cssArrows: false, 
@@ -12,6 +16,7 @@ $(function() {
 	}).after("<div id='mobile-menu'>").clone().appendTo("#mobile-menu");
 
 
+	// mobile menu 
 	$("#mobile-menu").find("*").attr("style", "");
 	$("#mobile-menu").children("ul").removeClass("sf-menu main-menu")
 	.parent().mmenu({
@@ -22,34 +27,49 @@ $(function() {
 
 	});
 
+
+	// hamburger event
 	var $hamburger = $(".hamburger"),
 	mainMenu = $(".main-menu");
 	$hamburger.on("click", function() {
 		$hamburger.toggleClass("is-active");
 	});
 
-		// close mobile button menu
+
+	// close mobile button menu
 	var api = $("#mobile-menu").data("mmenu");
 	api.bind("closed", function () {
 		$hamburger.removeClass("is-active");
 	});
 
 
+	// home top banner
 	$('.home-banner__carousel').owlCarousel({
 		items: 1,
 		loop: true,
 		dots: true,
 		responsive:{
-        0:{
+				0:{
 					autoWidth: false,
+					center: false,
+					items: 1,
+					margin: 0,
+				},
+        550:{
+					autoWidth: true,
+					center: true,
+					items: 1,
 					margin: 10,
         },
-        1100:{
+        1200:{
 					autoWidth: false,
+					margin: 0
         }
     }
 	});
 
+
+	// products carousel
 	$('.products-carousel').owlCarousel({
 		items: 4,
 		loop: true,
@@ -63,20 +83,27 @@ $(function() {
 					items: 3,
 					center: true
 				},
-        768:{
+        800:{
 					autoWidth: false,
 					items: 3,
         },
-        992:{
+        1200:{
 					items: 4,
-
+					autoWidth: false,
         }
     }
 	});
 
 
+	//resize owl carousel
+	$('.owl-carousel').on('resized.owl.carousel', function(event) {
+	    $(window).trigger("resize");
+	});
+
+
+	//resize fn
 	$( window ).resize(function() {
-		
+		$('.products-carousel__item .descr').matchHeight();		
 	});
 
 

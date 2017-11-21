@@ -31,8 +31,9 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/owl-carousel/dist/owl.carousel.min.js',
 		'app/libs/superfish/dist/js/superfish.min.js',
 		'app/libs/mmenu-master/dist/js/jquery.mmenu.all.min.js',
-		'app/libs/mmenu-master/src/jquery.mmenu.debugger.js',
-
+		'app/libs/jquery-match-height-master/dist/jquery.matchHeight-min.js',
+		'app/libs/bootstrap/js/bootstrap.min.js',
+		
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -57,7 +58,7 @@ gulp.task('sass', function() {
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
+	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });

@@ -4,8 +4,8 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1400px)
 	/**/
-	.container-wrap
-		width: 1230px
+	// .container-wrap
+	// 	width: 1230px
 
 
 /* Large Devices, Wide Screens */
@@ -13,6 +13,10 @@
 	/**/
 	.container-wrap
 		width: auto
+
+	.home-banner
+		img
+			height: 370px
 
 	.box-product
 		display: block
@@ -24,6 +28,8 @@
 				&:nth-child(odd) 
 					margin-right: 25px
 
+	.card-title
+		font-size: 30px
 
 
 /* Large Devices, Wide Screens */
@@ -32,12 +38,18 @@
 	.container	
 		width: 	970px
 
+	.footer-top
+		display: block
+		h3
+			font-size: 25px
+			margin-bottom: 20px
+
 	.top-bar-in
 		display: block
 		height: auto
 		padding: 10px 0
 		&__left
-			text-align: right
+			text-align: center
 			margin-bottom: 10px
 		&__right
 			text-align: right
@@ -46,16 +58,8 @@
 		width: 200px
 
 	.home-banner
-		img
-			height: 350px
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
-	.home-banner
 		margin-bottom: 10px
-		min-height: 300px
+		// min-height: 300px
 		&__left
 			display: none
 		&__right
@@ -64,8 +68,10 @@
 		.owl-item 
 			img
 				height: auto
-				width: 100%
-			width: 100%
+				width: auto
+
+	.testimonials-list
+		justify-content: space-around
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -77,7 +83,8 @@
 	.rigth-links
 		display: none
 
-	.hamburger
+	.hamburger,
+	.hamburger-link
 		display: block
 
 	#my-menu
@@ -87,13 +94,31 @@
 		a
 			text-transform: uppercase
 
+	.home-banner__item
+		width: 500px
+		height: auto
+	.banner-btn
+		width: 100%
+		left: 0
+		display: flex
+
+	.home-banner .owl-dots
+		bottom: 0
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 800px)
+	/**/
+	.products-carousel__item
+		width: 300px
+
+	.payments-list__item
+		flex: 1
+		margin: 0 1px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
-	.top-bar-in
-		&__left
-			display: none
 	
 	.box-product--group
 		display: block
@@ -102,9 +127,75 @@
 		.box-product__item:nth-child(odd)
 			margin-right: 0
 
+	.box-product
+		.first-box
+			.box-product__item--text
+				display: block
+			p:not(:last-child)
+				margin-bottom: 10px
+
+
 	.box-product__item--text
 		display: flex
 		justify-content: space-between
+		align-items: flex-end
+
+	.about
+		display: block
+	.about-content:nth-child(2)
+		margin: 0
+
+	.footer-in
+		flex-direction: column-reverse
+
+	.column-wrap
+		margin: 20px 0
+		&:not(:last-child)
+			margin-bottom: 20px
+
+	.column-group
+		> div
+			margin-bottom: 20px
+
+	footer 
+		.column-wrap:last-child
+			margin: 0
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 650px)
+	/**/
+	.top-bar-in
+		&__left
+			display: none
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 600px)
+	/**/
+	.testimonials-list
+		justify-content: center
+
+	.home-banner
+		min-height: auto
+		.owl-item 
+			img
+				height: auto
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 550px)
+	/**/
+	.home-banner__item
+		width: auto
+
+	.home-banner 
+		.owl-dots
+			right: 20px
+			.owl-dot
+				width: 10px
+				height: 10px
+
 
 
 /* Extra Small Devices, Phones */
@@ -113,6 +204,29 @@
 	.top-bar-in__right 
 		#search
 			width: 80%
+
+	.box-product .first-box p
+		font-size: 14px
+
+	.box-product__item img
+		margin-left: 10px
+
+	.box-product__item h2
+		font-size: 22px
+
+	.main-bar-in
+		height: 50px
+
+	footer
+		padding: 30px 0px
+
+	.column-group
+		margin-bottom: 20px
+	
+	.home-banner__item
+		.btn
+			font-size: 13px
+			padding: 5px
 
 
 /* Custom, iPhone Retina */

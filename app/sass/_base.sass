@@ -1,6 +1,7 @@
 @import "libs"
 @import "vars"
-
+/* base
+   ========================================================================== */
 *
 	-webkit-box-sizing: border-box
 	-moz-box-sizing: border-box
@@ -71,7 +72,8 @@ a
 	transition: all 0.2s ease
 	&:hover,
 	&:focus
-		color: $accent-color
+		text-decoration: none
+		// color: $accent-color
 
 .container	
 	width: 	1180px
@@ -83,9 +85,11 @@ img
 	max-width: 100%
 
 .section-title
-	font-weight: 700
-	font-size: 24px
-	text-transform: uppercase
+	font-weight: 400
+	font-size: 36px
+	margin-bottom: 15px
+	line-height: 1
+
 
 .btn
 	width: 212px
@@ -118,8 +122,8 @@ figure
 		display: block
 
 .container-wrap
-	max-width: 1400px
-	width: 1400px
+	max-width: 2000px
+	// width: 1400px
 	margin: 0 auto
 
 .aligncenter
@@ -130,3 +134,10 @@ figure
 
 .alignright
 	text-align: right
+
+
+ul
+	margin: 0
+	padding: 0
+	li
+		list-style-type: none
