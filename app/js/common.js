@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 	// equal height product desc in product carousel
 	$('.products-carousel__item .descr').matchHeight();
+	$('.products-carousel__item h4').matchHeight();
 
 	// desktop menu
 	$('ul.sf-menu').superfish({
@@ -49,23 +50,23 @@ $(document).ready(function() {
 		loop: true,
 		dots: true,
 		responsive:{
-				0:{
-					autoWidth: false,
-					center: false,
-					items: 1,
-					margin: 0,
-				},
-        550:{
-					autoWidth: true,
-					center: true,
-					items: 1,
-					margin: 10,
-        },
-        1200:{
-					autoWidth: false,
-					margin: 0
-        }
-    }
+			0:{
+				autoWidth: false,
+				center: false,
+				items: 1,
+				margin: 0,
+			},
+			550:{
+				autoWidth: true,
+				center: true,
+				items: 1,
+				margin: 10,
+			},
+			1200:{
+				autoWidth: false,
+				margin: 0
+			}
+		}
 	});
 
 
@@ -77,33 +78,55 @@ $(document).ready(function() {
 		nav: true,
 		margin: 25,
 		navText: ["<img src='../img/home/chevron-left.png'>", "<img src='../img/home/chevron-right.png'>"],
-				responsive:{
-				0: {
-					autoWidth: true,
-					items: 3,
-					center: true
-				},
-        800:{
-					autoWidth: false,
-					items: 3,
-        },
-        1200:{
-					items: 4,
-					autoWidth: false,
-        }
-    }
+		responsive:{
+			0: {
+				autoWidth: true,
+				items: 3,
+				center: true
+			},
+			800:{
+				autoWidth: false,
+				items: 3,
+			},
+			1200:{
+				items: 4,
+				autoWidth: false,
+			}
+		}
 	});
 
 
 	//resize owl carousel
 	$('.owl-carousel').on('resized.owl.carousel', function(event) {
-	    $(window).trigger("resize");
+		$(window).trigger("resize");
 	});
+
+	// show hidden text
+	$('.hidden-text').hide();
+	$('.less-text').hide();
+
+	$(".more-text").on('click', function(e) {
+	  $(this).siblings('.hidden-text').fadeIn("slow");
+	  $(this).hide();
+		$('.less-text').show();
+	  e.preventDefault();
+	});
+
+	$(".less-text").on('click', function(e) {
+	  $(this).siblings('.hidden-text').fadeOut("fast");
+	  $(this).hide();
+		$('.more-text').show();
+	  e.preventDefault();
+	});
+
+
+
 
 
 	//resize fn
 	$( window ).resize(function() {
 		$('.products-carousel__item .descr').matchHeight();		
+		$('.products-carousel__item h4').matchHeight();		
 	});
 
 

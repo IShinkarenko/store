@@ -18,8 +18,8 @@
 .card
 	&-title
 		margin: 0 0 50px
-		font-size: 48px
-		font-weight: 300
+		font-size: 40px
+		font-weight: 500
 		line-height: 1
 	&-box
 		display: flex
@@ -32,30 +32,109 @@
 		&__header
 			border-bottom: 1px solid $light-gray
 			padding: 16px 30px
-		&--info
+			color: $gray-accent
 			display: flex
-			li
-				color: $gray-accent
-				width: 130px
+			justify-content: space-between
+			p
+				margin: 0
+				width: 60px
+				display: inline-block
+				vertical-align: middle			
+			&--info
+				display: flex
+				li
+					width: 130px
+					font-size: 12px
+					line-height: 1
+			.circle
+				display: inline-block
+				vertical-align: middle
+				margin-right: 10px
+				font-family: 'Roboto', sans-serif
+				height: 50px
+				width: 50px
+				border-radius: 50%
+				line-height: 50px
+				text-align: center
+				font-size: 16px
+				color: #fff
+				background-color: $accent-color
+		&__body
+			display: flex
+			padding: 30px
+			table
+				font-family: 'Roboto', sans-serif
+				td:first-child
+					padding-right: 10px
+					font-weight: 700
+				td:last-child
+					color: $gray-bold
+			&--img
+				flex: 1
 				font-size: 12px
-				line-height: 1
-				span
-					display: inline-block
-					vertical-align: middle
-					margin-right: 10px
-					height: 50px
-					width: 50px
-					border-radius: 50%
-					line-height: 50px
+				.share
 					text-align: center
-					font-size: 18px
-					color: #fff
-					background-color: $accent-color
+					margin-top: 30px
+					p
+						color: $gray-bold
+						display: inline-block
+					ul
+						display: inline-block
+						margin: 0 15px
+					li
+						display: inline-block
+						margin: 0 5px
+						height: 20px
+						width: 20px
+					.facebook
+						background-color: #3c5a96
+					.twitter
+						background-color: #2aa3ef
+					.vk
+						background-color: #6484a7
+					a
+						line-height: 20px
+						display: block
+						color: #fff
+			&--descr
+				flex: 2
+				h4
+					font-weight: 500
+					font-size: 18px	
 				p
-					margin: 0
-					width: 70px
-					display: inline-block
-					vertical-align: middle
+					font-size: 14px
+				.btn-more
+					font-weight: 700
+					width: auto
+					display: block
+					padding: 0
+					margin: 35px 0 0
+		&--cat
+			text-transform: uppercase
+			color: $gray-bold
+			font-weight: 400
+
+
+.hidden-text
+	display: none
+
+.rating
+	p
+		display: inline-block
+	&__star
+		display: inline-block
+		width: 50px
+		height: 48px
+		background-image: url(../img/home/star.png)
+		background-size: contain
+		background-repeat: no-repeat
+		text-align: center
+		font-family: 'Roboto', sans-serif
+		span
+			line-height: 53px
+			color: #fff
+			font-size: 16px
+
 
 
 

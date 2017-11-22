@@ -116,6 +116,9 @@
 			border: none
 			&:hover
 				color: #88d7ff
+		&.sfHover
+			> a
+				color: #88d7ff
 		ul
 			.sf-with-ul
 				position: relative
@@ -225,7 +228,8 @@
 // home-banner
 .home-banner
 	overflow: hidden
-	margin: 0px auto 
+	margin: 0 auto 
+	max-width: 2000px
 	&__item
 		position: relative
 		.banner-btn
@@ -374,11 +378,10 @@
 			font-size: 12px	
 			text-transform: uppercase
 		h4
-			font-size: 18px
+			font-size: 16px
 			font-weight: 500
 			line-height: 1.4
 			margin-bottom: 20px
-			min-height: 75px
 			transition: color 0.5s ease
 		p
 			margin: 0 0 20px 0
@@ -392,7 +395,7 @@
 				font-weight: 500
 				font-size: 24px
 		.descr
-			font-size: 14px
+			font-size: 12px
 		img
 			display: block
 			// margin: 0 auto 30px
@@ -416,22 +419,25 @@
 	&-list
 		display: flex
 		flex-wrap: wrap
+		justify-content: space-between
 		margin-top: 60px
 		&__item
 			text-align: center
 			font-size: 14px
-			flex: 1 0 200px
+			flex: 0 0 200px
 			img
 				margin-bottom: 20px	
 		figcaption
-			font-weight: 700
-			text-transform: uppercase
+			font-weight: 500
+			font-size: 18px
 
 
 // about-shop
 .about
 	p
 		color: $paragraf-color
+		font-family: 'Roboto', sans-serif
+		font-weight: 300
 		&:not(:last-child)
 			margin-bottom: 30px
 
@@ -479,6 +485,12 @@
 			display: flex
 			justify-content: space-between
 			margin-top: 27px
+			color: #9a9a9a
+			font-family: 'Roboto', sans-serif
+	&-text
+		padding: 0 15px
+		color: $text-color
+		font-family: 'Roboto', sans-serif
 	&-name
 		text-transform: uppercase
 		font-weight: 700
@@ -583,8 +595,7 @@ footer
 .footer-top
 		align-items: center
 		border-bottom: 1px solid $border-color
-
 		h3
 			margin: 0
-			font-size: 36px
+			font-size: 30px
 			color: #fff
