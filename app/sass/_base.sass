@@ -1,5 +1,7 @@
 @import "libs"
 @import "vars"
+@import "fonts"
+
 /* base
    ========================================================================== */
 *
@@ -108,6 +110,9 @@ img
 		&:hover
 			background-color: $accent-color
 			color: #fff
+		&:focus
+			background-color: $accent-color
+			color: #fff			
 	&-more
 		background-color: transparent
 		color: $default-color
@@ -133,9 +138,20 @@ figure
 .alignright
 	text-align: right
 
+.bg-white
+	background-color: #fff
 
 ul
 	margin: 0
 	padding: 0
 	li
 		list-style-type: none
+
+h3
+	margin-top: 0
+
+p
+	margin-top: 10px
+
+.mm-slideout
+	z-index: auto

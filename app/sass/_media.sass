@@ -68,6 +68,16 @@
 	.testimonials-list
 		justify-content: space-around
 
+	.card-box--right 
+		display: flex
+		flex-direction: column
+		align-items: center
+		padding: 20px 0
+		.increment
+			margin-right: 30px
+		.btn-buy
+			width: 212px
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
@@ -100,6 +110,19 @@
 	.home-banner .owl-dots
 		bottom: 0
 
+	.card-box
+		display: block
+
+	.card-box__header
+		padding: 15px
+		> *
+			flex: 1
+			text-align: center
+
+
+	.card-tabs .nav-tabs > li > a
+		font-size: 18px
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 800px)
@@ -112,7 +135,7 @@
 		margin: 0 1px
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
+@media only screen and (max-width : 767px)
 	/**/
 	
 	.box-product--group
@@ -156,6 +179,29 @@
 		.column-wrap:last-child
 			margin: 0
 
+	.card-box__header
+		flex-direction: column-reverse
+		align-items: flex-start
+
+	.card-box__header--info
+		display: none
+	.card-box__body
+		display: block
+
+	.card-box__body
+		padding: 10px
+
+	.pay-sumup
+		padding: 20px
+
+	.pay-list
+		justify-content: center
+	.pay__item
+		flex: 1 0 200px
+	.pay-title 
+		h4
+			font-size: 20px
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 650px)
@@ -163,6 +209,23 @@
 	.top-bar-in
 		&__left
 			display: none
+
+	.modal-body
+		padding: 10px
+
+	.testimonials-form 
+		label
+			display: block
+			width: 100%
+			text-align: left
+		input,
+		textarea
+			display: block
+			width: 100%
+		textarea
+			height: 60px
+		.form-group
+			margin-bottom: 35px
 
 
 /* Extra Small Devices, Phones */
@@ -222,6 +285,9 @@
 		.btn
 			font-size: 13px
 			padding: 5px
+
+	.benefits-list
+		justify-content: center
 
 
 /* Custom, iPhone Retina */

@@ -24,51 +24,80 @@
 	&-box
 		display: flex
 		justify-content: space-beween
+		flex-wrap: wrap
+		margin-bottom: 80px
 		&--left
 			background-color: #fff
-			flex: 0 0 870px
+			flex: 1 0 850px
 		&--right
-			flex: 0 0 290px
+			flex: 1 0 300px
+			font-family: $second-font
+			padding: 0 0 0 30px
+			font-weight: 300
+			.testimonials
+				padding: 0
+				h3
+					margin-top: 0
+					font-size: 24px
+			.more-testimonials
+				color: $gray-bold
+				top: 0
+			a
+				&:hover
+					color: $accent-color
+			.btn-buy
+				// width: 100%
+				margin: 25px 0
 		&__header
 			border-bottom: 1px solid $light-gray
 			padding: 16px 30px
 			color: $gray-accent
 			display: flex
 			justify-content: space-between
+			font-family: $second-font
+			font-weight: 300
 			p
 				margin: 0
-				width: 60px
-				display: inline-block
+				width: 70px
+				font-size: 12px
+				text-transform: uppercase
 				vertical-align: middle			
+			.rating
+				display: flex
+				align-items: center
+				justify-content: flex-end
 			&--info
 				display: flex
 				li
-					width: 130px
+					display: block
 					font-size: 12px
+					font-family: $second-font
 					line-height: 1
+					display: flex
+					align-items: center
+					&:not(:last-child)
+						margin-right: 15px
 			.circle
-				display: inline-block
-				vertical-align: middle
+				display: block
 				margin-right: 10px
-				font-family: 'Roboto', sans-serif
-				height: 50px
-				width: 50px
+				height: 40px
+				width: 40px
 				border-radius: 50%
-				line-height: 50px
+				line-height: 42px
 				text-align: center
-				font-size: 16px
+				font-size: 14px
 				color: #fff
 				background-color: $accent-color
 		&__body
 			display: flex
 			padding: 30px
-			table
-				font-family: 'Roboto', sans-serif
-				td:first-child
-					padding-right: 10px
-					font-weight: 700
-				td:last-child
-					color: $gray-bold
+			&__bottom
+				display: flex
+				justify-content: space-between
+				align-items: center
+				color: $accent-color
+				text-transform: uppercase
+				font-weight: 500
 			&--img
 				flex: 1
 				font-size: 12px
@@ -103,17 +132,79 @@
 					font-size: 18px	
 				p
 					font-size: 14px
+					font-family: $second-font
+					color: #272930
 				.btn-more
 					font-weight: 700
 					width: auto
 					display: block
 					padding: 0
-					margin: 35px 0 0
+					color: $accent-color
+					font-weight: 500
 		&--cat
 			text-transform: uppercase
 			color: $gray-bold
 			font-weight: 400
+	&-cod
+		color: $gray-bold
+		margin-top: 0
+	&-status
+		.fa
+			color: $accent-color
+			margin-right: 10px
+		td
+			padding: 5px 0
+			&:first-child
+				padding-right: 10px
+	&-form
+		font-weight: 500
+		margin-top: 15px
+		label
+			margin-right: 10px
+			text-transform: uppercase
+			font-weight: 500
+			font-size: 12px
+		select
+			width: 200px
+			padding: 4px
+			border: none
+	&-price
+		font-size: 24px
+		font-weight: 400
+		line-height: 1
+		margin: 25px 0
+		span
+			font-size: 60px
+			color: $accent-color
+			margin-right: 5px
+	&-discount
+		margin-bottom: 0
+		.fa
+			color: $gray-bold
+		&-get
+			color: $gray-bold
+			text-decoration: underline
+	&-add
+		display: flex
+		justify-content: space-between
+		margin-bottom: 20px
+		.add-to-cart
+			text-transform: uppercase
+			font-family: $default-font
+			font-weight: 600
+			color: $accent-color
+	&-how
+		@extend .card-add
+		color: $gray-bold
+	
 
+.options
+	font-family: $second-font
+	td:first-child
+		padding-right: 10px
+		font-weight: 700
+	td:last-child
+		color: $gray-bold
 
 .hidden-text
 	display: none
@@ -129,12 +220,158 @@
 		background-size: contain
 		background-repeat: no-repeat
 		text-align: center
-		font-family: 'Roboto', sans-serif
+		font-family: $second-font
 		span
 			line-height: 53px
 			color: #fff
 			font-size: 16px
 
+.bg-transparent
+	background-color: transparent
 
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus
+	border: none
 
+.card-tabs
+	.nav-tabs 
+		border: none
+		> li
+			width: 50%
+			text-align: center
+			> a
+				margin: 0
+				border: none
+				font-size: 30px
+				font-family: $default-font
+				padding: 15px 0
 
+.tab-content
+	background-color: #fff
+	padding: 30px
+	table
+		border-bottom: 1px solid #dfdfe0
+		font-family: $second-font
+		tr
+			border-top: 1px solid #dfdfe0
+		td
+			padding: 15px 0
+			&:first-child
+				font-weight: 500
+				width: 20%
+				padding-right: 10px
+
+.pay
+	padding-bottom: 50px
+	display: none
+	&-list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		margin-top: 70px
+	&__item
+		flex: 0 0 340px
+		padding: 0 10px
+		margin-bottom: 40px
+		&--header
+			display: flex
+			align-items: center
+		&--body
+			font-family: $second-font
+	&-img
+		width: 85px
+		height: 85px
+		background-color: #fff
+		border-radius: 50%
+		margin-right: 15px
+		flex: 0 0 85px
+	&-title
+		h4
+			margin: 0
+			line-height: 1
+			font-size: 30px
+			font-weight: 300
+		span
+			font-family: $second-font
+			font-weight: 300
+	&-sumup
+		padding: 60px 80px
+		border: 1px solid $gray-bold
+		background-color: #fff
+		font-family: $second-font
+		> p
+			font-weight: 300
+		&--bottom
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+			flex-wrap: wrap
+			margin-top: 30px
+			.total
+				color: $accent-color
+				font-size: 18px
+			.btn
+				margin: 0
+			td
+				padding: 4px
+				&:last-child
+					font-weight: 600
+
+.ckbx-style-1 label:before
+	background-color: $gray-bold
+
+.ckbx-style-1 input[type=checkbox]:checked + label:before
+	background-color: $accent-color
+
+.checkbox-group
+	display: flex
+	align-items: center
+	p
+		margin-left: 15px
+		font-weight: 500
+
+.card-information
+	.card-box
+		margin-bottom: 0
+
+.modal-body
+	padding: 25px 50px 50px
+
+.modal-header
+	padding: 25px 30px 15px
+
+.testimonials-form
+	font-family: $second-font
+	label
+		width: 40%
+		text-align: right
+		padding-right: 15px
+		text-transform: uppercase
+		font-weight: 600
+		display: inline-block
+		vertical-align: top
+		span
+			color: $accent-color
+			margin-right: 5px
+	input,
+	textarea
+		width: 55%
+		border: none
+		border-bottom: 1px solid $light-gray
+		display: inline-block
+	textarea
+		resize: none
+		height: 100px
+	.form-group
+		margin-bottom: 20px
+	.btn-buy
+		width: 150px
+		margin: 30px auto 0
+		display: block
+
+.modal-header
+	border: none
+	h4
+		font-size: 30px
+		font-weight: 700

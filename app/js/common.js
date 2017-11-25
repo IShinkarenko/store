@@ -106,17 +106,33 @@ $(document).ready(function() {
 	$('.less-text').hide();
 
 	$(".more-text").on('click', function(e) {
-	  $(this).siblings('.hidden-text').fadeIn("slow");
-	  $(this).hide();
+		$(this).parents('.card-box__body--descr').find(".hidden-text").fadeIn("slow");
+		$(this).hide();
 		$('.less-text').show();
-	  e.preventDefault();
+		e.preventDefault();
 	});
 
 	$(".less-text").on('click', function(e) {
-	  $(this).siblings('.hidden-text').fadeOut("fast");
-	  $(this).hide();
+		$(this).parents('.card-box__body--descr').find(".hidden-text").fadeOut("fast");
+		$(this).hide();
 		$('.more-text').show();
-	  e.preventDefault();
+		e.preventDefault();
+	});
+
+
+	$('.card-tabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+
+	$(".buy-click").click(function() {
+		var paySection = $("#pay"),
+				staticSection = $(".card-information .card-box");
+		paySection.fadeIn();
+		staticSection.fadeOut();
+		$('html, body').animate({
+        scrollTop: staticSection.offset().top
+    }, 800);
 	});
 
 
