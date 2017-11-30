@@ -46,7 +46,8 @@
 				&:hover
 					color: $accent-color
 			.btn-buy
-				// width: 100%
+				width: 100%
+				max-width: 275px
 				margin: 25px 0
 		&__header
 			border-bottom: 1px solid $light-gray
@@ -127,9 +128,13 @@
 						color: #fff
 			&--descr
 				flex: 2
-				h4
+				h4,h2
 					font-weight: 500
 					font-size: 18px	
+				ul
+					margin-left: 27px
+				li
+					list-style-type: disc
 				p
 					font-size: 14px
 					font-family: $second-font
@@ -265,6 +270,7 @@
 .pay
 	padding-bottom: 50px
 	display: none
+	position: relative
 	&-list
 		display: flex
 		flex-wrap: wrap
@@ -286,6 +292,9 @@
 		border-radius: 50%
 		margin-right: 15px
 		flex: 0 0 85px
+		display: flex
+		align-items: center
+		justify-content: center
 	&-title
 		h4
 			margin: 0
@@ -317,6 +326,16 @@
 				padding: 4px
 				&:last-child
 					font-weight: 600
+
+.close-pay
+	position: absolute
+	top: 50px
+	right: 0
+	font-size: 25px
+	color: #888888
+	cursor: pointer
+	&:hover
+		color: $accent-color
 
 .ckbx-style-1 label:before
 	background-color: $gray-bold

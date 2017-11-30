@@ -101,23 +101,30 @@ $(document).ready(function() {
 		$(window).trigger("resize");
 	});
 
+
 	// show hidden text
-	$('.hidden-text').hide();
+	var prod = $(".card-box__body--descr"),
+	prodBottom = $(".card-box__body__bottom"),
+	lastTitle = prod.find("h2").last(),
+	hiddenText = lastTitle.nextUntil(prodBottom).addBack();
+
+	hiddenText.hide();
 	$('.less-text').hide();
 
 	$(".more-text").on('click', function(e) {
-		$(this).parents('.card-box__body--descr').find(".hidden-text").fadeIn("slow");
+		hiddenText.fadeIn("slow");
 		$(this).hide();
 		$('.less-text').show();
 		e.preventDefault();
 	});
 
 	$(".less-text").on('click', function(e) {
-		$(this).parents('.card-box__body--descr').find(".hidden-text").fadeOut("fast");
+		hiddenText.fadeOut("fast");
 		$(this).hide();
 		$('.more-text').show();
 		e.preventDefault();
 	});
+	// end show hidden text
 
 
 	$('.card-tabs a').click(function (e) {
@@ -125,17 +132,24 @@ $(document).ready(function() {
 		$(this).tab('show')
 	});
 
+	var paySection = $("#pay"),
+	staticSection = $(".card-information .card-box");
+
 	$(".buy-click").click(function() {
-		var paySection = $("#pay"),
-				staticSection = $(".card-information .card-box");
 		paySection.fadeIn();
 		staticSection.fadeOut();
 		$('html, body').animate({
-        scrollTop: staticSection.offset().top
-    }, 800);
+			scrollTop: staticSection.offset().top
+		}, 800);
 	});
 
-
+	$(".close-pay").click(function() {
+		paySection.fadeOut();
+		staticSection.fadeIn();
+		$('html, body').animate({
+			scrollTop: $(".card").offset().top
+		}, 800);
+	});
 
 
 

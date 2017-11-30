@@ -33,11 +33,9 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/mmenu-master/dist/js/jquery.mmenu.all.min.js',
 		'app/libs/jquery-match-height-master/dist/jquery.matchHeight-min.js',
 		'app/libs/bootstrap/js/bootstrap.min.js',
-		
-		'app/js/common.min.js', // Всегда в конце
 		])
-	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(concat('libs.min.js'))
+	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -85,10 +83,12 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 
 	var buildCss = gulp.src([
 		'app/css/main.min.css',
+		'app/css/libs.min.css',
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
+		'app/js/libs.min.js',
+		'app/js/common.min.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([
