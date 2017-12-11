@@ -280,6 +280,16 @@
 		flex: 0 0 340px
 		padding: 0 10px
 		margin-bottom: 40px
+		&.active
+			.pay-img
+				border: 2px solid $accent-color
+			h4
+				color: $accent-color
+		&:hover
+			h4
+				color: $accent-color
+		label
+			cursor: pointer
 		&--header
 			display: flex
 			align-items: center
@@ -311,21 +321,24 @@
 		font-family: $second-font
 		> p
 			font-weight: 300
+		&-total
+			color: $accent-color
+			font-size: 18px
 		&--bottom
 			display: flex
 			align-items: flex-end
 			justify-content: space-between
 			flex-wrap: wrap
 			margin-top: 30px
-			.total
-				color: $accent-color
-				font-size: 18px
 			.btn
 				margin: 0
 			td
 				padding: 4px
 				&:last-child
 					font-weight: 600
+
+input[name="pay"]
+	display: none
 
 .close-pay
 	position: absolute
@@ -356,6 +369,24 @@
 
 .modal-body
 	padding: 25px 50px 50px
+	label
+		font-size: 14px
+
+.close
+	font-size: 25px
+	outline: none
+	span
+
+
+#testimonialsModal-all
+	.modal-content
+		padding: 15px
+	.modal-body
+		padding: 30px
+	.testimonials-list
+		margin-top: 25px
+		&__item
+			flex: 0 0 255px
 
 .modal-header
 	padding: 25px 30px 15px
@@ -392,5 +423,20 @@
 .modal-header
 	border: none
 	h4
-		font-size: 30px
+		font-size: 24px
 		font-weight: 700
+
+
+#increment
+	text-align: center
+	border: none
+	margin: 0 5px
+	user-select: none
+.minus,
+.plus
+	cursor: pointer
+	font-size: 12px
+	user-select: none
+
+.testimonials-popup
+	cursor: pointer

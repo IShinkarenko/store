@@ -21,24 +21,25 @@ gulp.task('common-js', function() {
 		'app/js/common.js',
 		])
 	.pipe(concat('common.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('app/js'));
-});
-
-gulp.task('js', ['common-js'], function() {
-	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/owl-carousel/dist/owl.carousel.min.js',
-		'app/libs/superfish/dist/js/superfish.min.js',
-		'app/libs/mmenu-master/dist/js/jquery.mmenu.all.min.js',
-		'app/libs/jquery-match-height-master/dist/jquery.matchHeight-min.js',
-		'app/libs/bootstrap/js/bootstrap.min.js',
-		])
-	.pipe(concat('libs.min.js'))
-	.pipe(uglify()) // Минимизировать весь js (на выбор)
+	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
+
+// gulp.task('js', ['common-js'], function() {
+// 	return gulp.src([
+// 		'app/libs/jquery/dist/jquery.min.js',
+// 		'app/libs/owl-carousel/dist/owl.carousel.min.js',
+// 		'app/libs/superfish/dist/js/superfish.min.js',
+// 		'app/libs/mmenu-master/dist/js/jquery.mmenu.all.min.js',
+// 		'app/libs/jquery-match-height-master/dist/jquery.matchHeight-min.js',
+// 		'app/libs/bootstrap/js/bootstrap.min.js',
+// 		])
+// 	.pipe(concat('libs.min.js'))
+// 	.pipe(uglify()) // Минимизировать весь js (на выбор)
+// 	.pipe(gulp.dest('app/js'))
+// 	.pipe(browserSync.reload({stream: true}));
+// });
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -61,9 +62,9 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['sass', 'common-js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
+	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['common-js']);
 	gulp.watch('app/*.html', browserSync.reload);
 });
 
@@ -74,7 +75,7 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img')); 
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'sass',], function() {
 
 	var buildFiles = gulp.src([
 		'app/*.html',
@@ -88,7 +89,7 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 
 	var buildJs = gulp.src([
 		'app/js/libs.min.js',
-		'app/js/common.min.js',
+		'app/js/common.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([

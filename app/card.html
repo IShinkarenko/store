@@ -3,7 +3,7 @@
 
 <head>
 
-	<meta charset="utf-8">
+	<meta charset="utf-8"> 
 
 	<title>Title</title>
 	<meta name="description" content="">
@@ -159,7 +159,7 @@
 							<div class="card-box__header">
 								<ul class="card-box__header--info">
 									<li><span class="circle">398</span><p>покупок</p></li>
-									<li><span class="circle">61</span><p>отзыв</p></li>
+									<li class="testimonials-popup" data-toggle="modal" data-target="#testimonialsModal-all"><span class="circle">61</span><p>отзыв</p></li>
 									<li><span class="circle">5</span><p>товаров в наличии</p></li>
 									<li><span class="circle">9928</span><p>просмотров</p></li>
 								</ul>
@@ -243,15 +243,21 @@
 							</div>
 							<p class="card-price"><span>790</span>рублей</p>
 							<p class="card-discount">Ваша скидка составляет <span>7110</span> рублей <i class="fa fa-question-circle" aria-hidden="true"></i></p>
-							<p class="card-discount-get"><a href="#">Получить дополнительную скидку</a></p>
+							<p class="card-discount-get"><a href="#" data-toggle="modal" data-target="#discount-modal">Получить дополнительную скидку</a></p>
 							<button class="btn btn-buy buy-click">Купить в 1 клик</button>
 							<div class="card-add">
-								<div class="increment">1</div>
+								<div class="increment">
+									<div class="number">
+										<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+										<input type="text" value="1" size="2" id="increment"/>
+										<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+									</div>
+								</div>
 								<a class="add-to-cart" href="#">Добавить в корзину</a>
 							</div>
 							<div class="card-how">
-								<a href="#">Как купить?</a>
-								<a href="#">Как активировать?</a>
+								<a href="#" data-toggle="modal" data-target="#howtobuy-modal">Как купить?</a>
+								<a href="#" data-toggle="modal" data-target="#howtoactive-modal">Как активировать?</a>
 							</div>
 						</div>
 					</div>
@@ -295,7 +301,7 @@
 							<div class="card-box--right">
 								<section class="testimonials">
 									<h3 class="section-title">Отзывы</h3>
-									<div class="more-testimonials"><a href="#" data-toggle="modal" data-target="#testimonialsModal"><i class="fa fa-plus-circle" aria-hidden="true"></i>Добавить отзыв</a></div>
+									<div class="more-testimonials"><a href="#" data-toggle="modal" data-target="#testimonialsModal-create"><i class="fa fa-plus-circle" aria-hidden="true"></i>Добавить отзыв</a></div>
 									<!-- testimonials-list -->
 									<div class="testimonials-list">
 										<div class="testimonials-list__item">
@@ -315,41 +321,7 @@
 									</div>
 									<!-- /testimonials-list -->
 
-									<!-- Testimonials Modal -->
-									<div class="modal fade" id="testimonialsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="myModalLabel">Оставить отзыв</h4>
-												</div>
-												<div class="modal-body">
-													<form class="testimonials-form">
-														<div class="form-group">
-															<label for="name"><span>*</span>Представьтесь</label>
-															<input type="name" id="name" placeholder="Ваше имя">
-														</div>
-														<div class="form-group">
-															<label for="nik"><span>*</span>Ваш ник</label>
-															<input type="name" id="nik" placeholder="@MyNick">
-														</div>
-														<div class="form-group">
-															<label for="text"><span>*</span>Ваш отзыв</label>	
-															<textarea id="text"></textarea>
-														</div>
-														<div class="form-group">
-															<label for="estimate"><span>*</span>Ваша оценка:</label>	
-														</div>
-														<div class="form-group">
-															<label for="cod"><span>*</span>Проверочнвй код:</label>	
-														</div>
-														<input type="submit" class="btn btn-buy" value="Отправить">
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /Modal -->
+									
 								</section>
 							</div>
 							<!-- /card box right-->
@@ -361,169 +333,205 @@
 							<!-- pay-list -->
 							<div class="pay-list">
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/webmoney.png" alt="webmoney">
+									<label for="webmoney">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/webmoney.png" alt="webmoney">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Webmoney</h4>
+												<span>790 wmr</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Webmoney</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="webmoney" value="790 wmr">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/webmoney.png" alt="webmoney">
+									<label for="wm-карта">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/webmoney.png" alt="webmoney">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">WM-карта</h4>
+												<span>700 wmr</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>WM-карта</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="wm-карта" value="700 wmr">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/qiwi.png" alt="qiwi">
+									<label for="qiwi">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/qiwi.png" alt="qiwi">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Qiwi</h4>
+												<span>900 p.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Qiwi</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="qiwi" value="900 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/yandex.png" alt="yandex">
+									<label for="yandex">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/yandex.png" alt="yandex">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Яндекс.Деньги</h4>
+												<span>600 p.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Яндекс.Деньги</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="yandex" value="600 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/mastercard.png" alt="mastercard">
+									<label for="mastercard">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/mastercard.png" alt="mastercard">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Банковской картой</h4>
+												<span>434 p.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Банковской картой</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="mastercard" value="434 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/mastercard.png" alt="mastercard">
+									<label for="banking">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/mastercard.png" alt="mastercard">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Интернет-банкинг</h4>
+												<span>790 wmr</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Интернет-банкинг</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="banking" value="790 wmr">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/beeline.png" alt="beeline">
+									<label for="beeline">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/beeline.png" alt="beeline">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Билайн</h4>
+												<span>340 p.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Билайн</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="beeline" value="340 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/mtc.png" alt="mtc">
+									<label for="mtc">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/mtc.png" alt="mtc">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">МТС</h4>
+												<span>140 p.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>МТС</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="mtc" value="140 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/megaphone.png" alt="megaphone">
+									<label for="megaphone">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/megaphone.png" alt="megaphone">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Мегафон</h4>
+												<span>400 p.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Мегафон</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="megaphone" value="400 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/ligpay.png" alt="ligpay">
+									<label for="terminai-ru">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/ligpay.png" alt="ligpay">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Терминалы в России</h4>
+												<span>300 р.</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Терминалы в России</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="terminai-ru" value="300 p.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/ligpay.png" alt="ligpay">
+									<label for="terminai-ua">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/ligpay.png" alt="ligpay">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Терминалы в России</h4>
+												<span>90 wmr</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Терминалы в России</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="terminai-ua" value="90 wmr">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
 								</div>
 								<div class="pay__item">
-									<div class="pay__item--header">
-										<div class="pay-img">
-											<img src="img/pay/giftcard.png" alt="giftcar">
+									<label for="giftcard">
+										<div class="pay__item--header">
+											<div class="pay-img">
+												<img src="img/pay/giftcard.png" alt="giftcar">
+											</div>
+											<div class="pay-title">
+												<h4 class="pay-title-method">Подарочная карта</h4>
+												<span>790 wmr</span>
+											</div>
 										</div>
-										<div class="pay-title">
-											<h4>Терминалы в России</h4>
-											<span>790 wmr</span>
-										</div>
-									</div>
+										<input type="radio" name="pay" id="giftcard" value="790 р.">
+									</label>
 									<div class="pay__item--body">
 										<p>Оплата через стандартный Webmoney Transfer или выписку счёта на ваш WMID. Учитывайте комиссию Webmoney за перевод - 0.8%.</p>
 									</div>
@@ -558,14 +566,14 @@
 										</tr>
 										<tr>
 											<td>Вы оплачиваете:</td>
-											<td>Яндекс.Деньги</td>
+											<td class="pay-sumup-method"></td>
 										</tr>
 										<tr>
 											<td>Сумма к оплате:</td>
-											<td><span class="total">840,43</span> рублей</td>
+											<td><span class="pay-sumup-total"></span></td>
 										</tr>
 									</table>
-									<a href="" class="btn btn-buy">Оплатить</a>
+									<button class="btn btn-buy" disabled>Оплатить</button>
 								</div>
 							</div>
 							<!-- /pay-sumup -->
@@ -728,9 +736,178 @@
 
 	</div>
 
+	<!-- Testimonials Modal create -->
+	<div class="modal fade" id="testimonialsModal-create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+					<h4 class="modal-title" id="myModalLabel">Оставить отзыв</h4>
+				</div>
+				<div class="modal-body">
+					<form class="testimonials-form">
+						<div class="form-group">
+							<label for="name"><span>*</span>Представьтесь</label>
+							<input type="name" id="name" placeholder="Ваше имя">
+						</div>
+						<div class="form-group">
+							<label for="nik"><span>*</span>Ваш ник</label>
+							<input type="name" id="nik" placeholder="@MyNick">
+						</div>
+						<div class="form-group">
+							<label for="text"><span>*</span>Ваш отзыв</label>	
+							<textarea id="text"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="estimate"><span>*</span>Ваша оценка:</label>	
+						</div>
+						<div class="form-group">
+							<label for="cod"><span>*</span>Проверочнвй код:</label>	
+						</div>
+						<input type="submit" class="btn btn-buy" value="Отправить">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
 
+	<!-- Testimonials Modal ALL -->
+	<div class="modal fade" id="testimonialsModal-all" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-gray">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+					<h4 class="modal-title" id="myModalLabel">Отзывы</h4>
+				</div>
+				<div class="modal-body bg-gray">
 
-	<script src="js/libs.min.js"></script>
-	<script src="js/common.min.js"></script>
+					<!-- testimonials-list -->
+					<div class="testimonials-list">
+
+						<div class="testimonials-list__item">
+							<div class="testimonials-list--img">
+								<span>CK</span>
+							</div>
+							<div class="testimonials-list--info">
+								<p class="testimonials-name">Сергей Кравцов</p>
+								<p class="testimonials-email">@sergostar83</p>
+								<p class="testimonials-text">Купил сегодня , всё активировалось с первого раза и без проблем! Спасибо большое за возможность сэкономить!!</p>
+							</div>
+							<div class="testimonials-list--date">
+								<span>01.05.2017</span>
+								<span>23:02</span>
+							</div>
+						</div>
+
+						<div class="testimonials-list__item">
+							<div class="testimonials-list--img">
+								<span>CK</span>
+							</div>
+							<div class="testimonials-list--info">
+								<p class="testimonials-name">Сергей Кравцов</p>
+								<p class="testimonials-email">@sergostar83</p>
+								<p class="testimonials-text">Купил сегодня , всё активировалось с первого раза и без проблем! Спасибо большое за возможность сэкономить!!</p>
+							</div>
+							<div class="testimonials-list--date">
+								<span>01.05.2017</span>
+								<span>23:02</span>
+							</div>
+						</div>
+
+						<div class="testimonials-list__item">
+							<div class="testimonials-list--img">
+								<span>CK</span>
+							</div>
+							<div class="testimonials-list--info">
+								<p class="testimonials-name">Сергей Кравцов</p>
+								<p class="testimonials-email">@sergostar83</p>
+								<p class="testimonials-text">Купил сегодня , всё активировалось с первого раза и без проблем! Спасибо большое за возможность сэкономить!!</p>
+							</div>
+							<div class="testimonials-list--date">
+								<span>01.05.2017</span>
+								<span>23:02</span>
+							</div>
+						</div>
+
+						<div class="testimonials-list__item">
+							<div class="testimonials-list--img">
+								<span>CK</span>
+							</div>
+							<div class="testimonials-list--info">
+								<p class="testimonials-name">Сергей Кравцов</p>
+								<p class="testimonials-email">@sergostar83</p>
+								<p class="testimonials-text">Купил сегодня , всё активировалось с первого раза и без проблем! Спасибо большое за возможность сэкономить!!</p>
+							</div>
+							<div class="testimonials-list--date">
+								<span>01.05.2017</span>
+								<span>23:02</span>
+							</div>
+						</div>
+
+					</div>
+					<!-- /testimonials-list -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
+
+	<!-- how to buy -->
+	<div class="modal fade" id="howtobuy-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+					<h4 class="modal-title" id="myModalLabel">Как купить?</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eveniet laborum, dolorum laudantium pariatur veritatis, magni aperiam. Nostrum ab suscipit quisquam perspiciatis voluptatum, aspernatur provident error explicabo, corporis impedit accusantium!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
+
+	<!-- how to buy -->
+	<div class="modal fade" id="howtoactive-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+					<h4 class="modal-title" id="myModalLabel">Как активировать?</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ab, minus similique, magni fugit delectus obcaecati? Blanditiis deleniti quos ullam fugit magni non culpa sint fugiat, dicta autem omnis quam.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
+
+		<!-- how to buy -->
+	<div class="modal fade" id="discount-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+					<h4 class="modal-title" id="myModalLabel">Получить дополнительную скидку?</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime mollitia quis nisi, sit autem est quam, adipisci sapiente minima fugiat minus, distinctio commodi voluptatum et, deleniti odit vitae exercitationem officiis.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal -->
+
+	<!-- <script src="js/libs.min.js"></script> -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/owl-carousel/dist/owl.carousel.min.js"></script>
+	<script src="libs/superfish/dist/js/superfish.min.js"></script>
+	<script src="libs/mmenu-master/dist/js/jquery.mmenu.all.min.js"></script>
+	<script src="libs/jquery-match-height-master/dist/jquery.matchHeight-min.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
 </body>
 </html>

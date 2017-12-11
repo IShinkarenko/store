@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	'use strict';
 
-	// equal height product desc in product carousel
+	// equal height product desc in product carousel 
 	$('.products-carousel__item .descr').matchHeight();
 	$('.products-carousel__item h4').matchHeight();
 
@@ -126,22 +126,26 @@ $(document).ready(function() {
 	});
 	// end show hidden text
 
-
+	// tabs
 	$('.card-tabs a').click(function (e) {
 		e.preventDefault()
 		$(this).tab('show')
 	});
 
+	// buy in one click
 	var paySection = $("#pay"),
 	staticSection = $(".card-information .card-box");
 
 	$(".buy-click").click(function() {
-		paySection.fadeIn();
-		staticSection.fadeOut();
-		$('html, body').animate({
-			scrollTop: staticSection.offset().top
-		}, 800);
-	});
+		if ( staticSection.is(':visible') ) {
+			paySection.fadeIn();
+			staticSection.fadeOut();
+			$('html, body').animate({
+				scrollTop: staticSection.offset().top
+			}, 800);
+		}
+		
+	}); 
 
 	$(".close-pay").click(function() {
 		paySection.fadeOut();
@@ -149,6 +153,49 @@ $(document).ready(function() {
 		$('html, body').animate({
 			scrollTop: $(".card").offset().top
 		}, 800);
+	});
+
+	
+	// check payment method
+	$(document).on("click", ".pay-list input[type='radio']:checked", function() {
+		$(".pay__item").removeClass("active");
+		var payMethod = $(this).prev().find(".pay-title-method").text(),
+		paySum = $(this).val();
+		$(this).parents(".pay__item").addClass("active");
+
+		$('html, body').animate({
+			scrollTop: $(".pay-sumup").offset().top
+		}, 800);
+
+		$(".pay-sumup-method").text(payMethod);
+		$(".pay-sumup-total").text(paySum);
+	});
+
+	$(document).on("change", ".pay-sumup--condition input[type='checkbox']", function() {
+		var notSelected = $(".pay-sumup--condition input[type='checkbox']").length,
+		selected = $(".pay-sumup--condition input[type='checkbox']:checked").length;
+
+		if ( notSelected == selected ) {
+			$(".pay-sumup--bottom .btn-buy").prop("disabled", false);
+		} else {
+			$(".pay-sumup--bottom .btn-buy").prop("disabled", true);
+		}
+	});
+
+	// increment/decrement
+	$('.minus').click(function () {
+		var $input = $(this).parent().find('input');
+		var count = parseInt($input.val()) - 1;
+		count = count < 1 ? 1 : count;
+		$input.val(count);
+		$input.change();
+		return false;
+	});
+	$('.plus').click(function () {
+		var $input = $(this).parent().find('input');
+		$input.val(parseInt($input.val()) + 1);
+		$input.change();
+		return false;
 	});
 
 
